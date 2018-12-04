@@ -1,0 +1,11 @@
+{
+  "name": "",
+  "version": ""
+}
+
+"scripts": {
+    "start": "npm-run-all --parallel local-serve showpad-serve", // This will run both scripts below at the same time
+    "local-serve": "{start up your app}",
+    "showpad-serve": "showpad experience serve"
+   
+  }
