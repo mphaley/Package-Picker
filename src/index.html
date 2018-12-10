@@ -10,21 +10,128 @@
 
         <h1>Package Picker!</h1>
         <div class="question">
-    		<h2> Do you want ultimate? </h2>
+    		<h2> Let's pick a package! </h2>
   		</div>
 
 		<div class='number-input'>
   		<table style="width:100%">
+    		
+  			<!-- FIRST ROW -->
     		<tr>
-  				<td>How many difficult?</td>
-				<td><input type="number" id='myNumber'></td>
+  				<td>What package is the customer advised ?</td>
+				<td>
+					<!-- <input type="number" id='myNumber'> -->
+					<select id = "howdiff">
+						<option value = "Essential">Essential</option>
+						<option value = "Plus">Plus</option>
+						<option value = "Ulitmate">Ulitmate</option>
+					</select>
+				</td>
     			
   			</tr>
-  			<tr>
-  				<td>How much difficult?</td>
-				<td><input type="number" id='myNumber2'></td>
+
+			<!-- Second ROW -->
+    		<tr>
+  				<td>Does the customer want to deploy in less then 60 days?</td>
+				<td>
+					<!-- <input type="number" id='myNumber'> -->
+					<select id = "timeline">
+						<option value = "Yes">Yes</option>
+						<option value = "No">No</option>
+					</select>
+				</td>
+  			</tr>
+
+  			<!-- Third ROW -->
+    		<tr>
+  				<td>How many regions will have unique libraries of Content?</td>
+				<td>
+					<!-- <input type="number" id='myNumber'> -->
+					<select id = "regions">
+						<option value = "One">1</option>
+						<option value = "Two-Four">2-4</option>
+						<option value = "FivePlus">5+</option>
+					</select>
+				</td>
     			
   			</tr>
+
+  			<!-- Fourth ROW -->
+    		<tr>
+  				<td>How many pieces of content will they be launching with?</td>
+				<td>
+					<!-- <input type="number" id='myNumber'> -->
+					<select id = "piecesofcontent">
+						<option value = "zeroTo1000">0-1000</option>
+						<option value = "1000to5000">1000-5000</option>
+						<option value = "5000plus">5000+</option>
+					</select>
+				</td>
+    			
+  			</tr>
+  			<!-- Fifth ROW -->
+    		<tr>
+  				<td>SSO?</td>
+				<td>
+					<!-- <input type="number" id='myNumber'> -->
+					<select id = "SSO">
+						<option value = "Yes">Yes</option>
+						<option value = "No">No</option>
+					</select>
+				</td>
+    			
+  			</tr>
+  			<!-- Sixth ROW -->
+    		<tr>
+  				<td>MDM?</td>
+				<td>
+					<!-- <input type="number" id='myNumber'> -->
+					<select id = "MDM">
+						<option value = "Yes">Yes</option>
+						<option value = "No">No</option>
+					</select>
+				</td>
+    			
+  			</tr>
+  			<!-- 7th ROW -->
+    		<tr>
+  				<td>CRM?</td>
+				<td>
+					<!-- <input type="number" id='myNumber'> -->
+					<select id = "CRM">
+						<option value = "Salesforce">Salesforce</option>
+						<option value = "Dynamics">Dynamics</option>
+						<option value = "C4C">SAP C4C</option>
+					</select>
+				</td>
+    			
+  			</tr>
+  			<!-- 8th ROW -->
+    		<tr>
+  				<td>Marketo, Outreach or Sharepoint?</td>
+				<td>
+					<!-- <input type="number" id='myNumber'> -->
+					<select id = "CRM">
+						<option value = "Marketo">Marketo</option>
+						<option value = "Outreach">Outreach</option>
+						<option value = "Sharepoint">Sharepoint</option>
+					</select>
+				</td>
+    			
+  			</tr>
+  			<!-- 9th ROW -->
+    		<tr>
+  				<td>Custom Integration or custom experience?</td>
+				<td>
+					<!-- <input type="number" id='myNumber'> -->
+					<select id = "customint">
+						<option value = "Yes">Yes</option>
+						<option value = "No">No</option>
+					</select>
+				</td>
+    			
+  			</tr>
+  			
 
   
  		</div>

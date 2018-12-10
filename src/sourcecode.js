@@ -1,3 +1,9 @@
+
+
 function Calculation(){
-document.getElementById('display').innerHTML = "ULTIMATE"
+
+var difficulty = document.getElementById("howdiff");
+var diff = difficulty.value;
+document.getElementById('display').innerHTML = diff;
+
 }
