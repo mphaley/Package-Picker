@@ -5,7 +5,7 @@
 		<link rel="stylesheet" type="text/css" href="css/moble.css">
         <title>Package Picker</title>
     </head>
-    <body> Hi
+    <body> 
  
  <script src="sourcecode.js"></script>
         
@@ -16,23 +16,56 @@
   		</div>
 
 		<div class='number-input'>
-  		<table>
+  		<table style="width:50%">
     		
   			<!-- FIRST ROW -->
-    		<tr>
+    		<!-- <tr>
   				<td>What package is the customer advised ?</td>
 				<td>
-					<!-- <input type="number" id='myNumber'> -->
-					<select id = "howdiff">
+					<select id = "basepackage">
 						<option value = "Essential">Essential</option>
 						<option value = "Plus">Plus</option>
-						<option value = "Ulitmate">Ulitmate</option>
+						<option value = "Ultimate">Ulitmate</option>
 					</select>
 				</td>
     			
+  			</tr> -->
+  			<tr>
+  				<td>Number of customer's teams invloved in presales (Marketing, Sales Ops, etc.)?</td>
+				<td>
+					<select id = "teamsinvolved">
+						<option value = "1">1</option>
+						<option value = "2-3">2-3</option>
+						<option value = "4+">4+</option>
+					</select>
+				</td>
+    			
+  			</tr> 
+  			<!-- Second ROW -->
+    		<tr>
+  				<td>Was SE team involved in trial?</td>
+				<td>
+					<!-- <input type="number" id='myNumber'> -->
+					<select id = "demotrial">
+						<option value = "Yes">Yes</option>
+						<option value = "No">No</option>
+					</select>
+				</td>
   			</tr>
 
-			<!-- Second ROW -->
+  			<!-- 3rd ROW -->
+    		<tr>
+  				<td>Is the customer in a regulated industry?</td>
+				<td>
+					<!-- <input type="number" id='myNumber'> -->
+					<select id = "regulated">
+						<option value = "Yes">Yes</option>
+						<option value = "No">No</option>
+					</select>
+				</td>
+  			</tr>
+
+			<!-- 4th ROW -->
     		<tr>
   				<td>Does the customer want to deploy in less then 60 days?</td>
 				<td>
@@ -44,7 +77,10 @@
 				</td>
   			</tr>
 
-  			<!-- Third ROW -->
+  			
+
+
+  			<!-- 5th ROW -->
     		<tr>
   				<td>How many regions will have unique libraries of Content?</td>
 				<td>
@@ -58,7 +94,7 @@
     			
   			</tr>
 
-  			<!-- Fourth ROW -->
+  			<!-- 6th ROW -->
     		<tr>
   				<td>How many pieces of content will they be launching with?</td>
 				<td>
@@ -71,7 +107,7 @@
 				</td>
     			
   			</tr>
-  			<!-- Fifth ROW -->
+  			<!-- 7th ROW -->
     		<tr>
   				<td>SSO?</td>
 				<td>
@@ -83,7 +119,7 @@
 				</td>
     			
   			</tr>
-  			<!-- Sixth ROW -->
+  			<!-- 8th ROW -->
     		<tr>
   				<td>MDM?</td>
 				<td>
@@ -95,7 +131,7 @@
 				</td>
     			
   			</tr>
-  			<!-- 7th ROW -->
+  			<!-- 9th ROW -->
     		<tr>
   				<td>CRM?</td>
 				<td>
@@ -104,29 +140,31 @@
 						<option value = "Salesforce">Salesforce</option>
 						<option value = "Dynamics">Dynamics</option>
 						<option value = "C4C">SAP C4C</option>
+						<option value = "None">None</option>
 					</select>
 				</td>
     			
   			</tr>
-  			<!-- 8th ROW -->
+  			<!-- 10th ROW -->
     		<tr>
   				<td>Marketo, Outreach or Sharepoint?</td>
 				<td>
 					<!-- <input type="number" id='myNumber'> -->
-					<select id = "CRM">
+					<select id = "otherints">
 						<option value = "Marketo">Marketo</option>
 						<option value = "Outreach">Outreach</option>
 						<option value = "Sharepoint">Sharepoint</option>
+						<option value = "None">None</option>
 					</select>
 				</td>
     			
   			</tr>
-  			<!-- 9th ROW -->
+  			<!-- 11th ROW -->
     		<tr>
   				<td>Custom Integration or custom experience?</td>
 				<td>
 					<!-- <input type="number" id='myNumber'> -->
-					<select id = "customint">
+					<select id = "custom">
 						<option value = "Yes">Yes</option>
 						<option value = "No">No</option>
 					</select>
@@ -137,6 +175,11 @@
 
   
  		</div>
+ 	</table>
+ 	<br>
+
+ 	<table style="width:50%">
+ 		
   <tr>
   		<td>
   		<div class='button'>
