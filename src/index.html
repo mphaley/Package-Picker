@@ -16,20 +16,21 @@
   		</div>
 
 		<div class='number-input'>
-  		<table style="width:50%">
+  		<table>
     		
-  			<!-- FIRST ROW -->
-    		<!-- <tr>
-  				<td>What package is the customer advised ?</td>
+<!-- 1 ROW -->
+			<tr>
+  				<td>What platform is the customer interested in?</td>
 				<td>
-					<select id = "basepackage">
-						<option value = "Essential">Essential</option>
-						<option value = "Plus">Plus</option>
-						<option value = "Ultimate">Ulitmate</option>
+					<select id = "platform">
+						<option value = "Content">Content</option>
+						<option value = "Training & Coaching">Training & Coaching</option>
+						<option value = "Both">Both</option>
 					</select>
 				</td>
     			
-  			</tr> -->
+  			</tr> 
+<!-- 2 ROW -->
   			<tr>
   				<td>Number of customer's teams invloved in presales (Marketing, Sales Ops, etc.)?</td>
 				<td>
@@ -41,7 +42,7 @@
 				</td>
     			
   			</tr> 
-  			<!-- Second ROW -->
+  			<!-- 3 ROW -->
     		<tr>
   				<td>Was SE team involved in trial?</td>
 				<td>
@@ -53,7 +54,7 @@
 				</td>
   			</tr>
 
-  			<!-- 3rd ROW -->
+  			<!-- 4 ROW -->
     		<tr>
   				<td>Is the customer in a regulated industry?</td>
 				<td>
@@ -65,7 +66,7 @@
 				</td>
   			</tr>
 
-			<!-- 4th ROW -->
+			<!-- 5 ROW -->
     		<tr>
   				<td>Does the customer want to deploy in less then 60 days?</td>
 				<td>
@@ -80,7 +81,7 @@
   			
 
 
-  			<!-- 5th ROW -->
+  			<!-- 6 ROW -->
     		<tr>
   				<td>How many regions will have unique libraries of Content?</td>
 				<td>
@@ -94,7 +95,7 @@
     			
   			</tr>
 
-  			<!-- 6th ROW -->
+  			<!-- 7 ROW -->
     		<tr>
   				<td>How many pieces of content will they be launching with?</td>
 				<td>
@@ -107,7 +108,37 @@
 				</td>
     			
   			</tr>
-  			<!-- 7th ROW -->
+
+  			<!-- 8 ROW -->
+    		<tr>
+  				<td>Number of Licences?</td>
+				<td>
+					<!-- <input type="number" id='myNumber'> -->
+					<select id = "licensecount">
+						<option value = "zeroTo200">0-200</option>
+						<option value = "200to1000">200-1000</option>
+						<option value = "1000plus">1000+</option>
+					</select>
+				</td>
+    			
+  			</tr>
+
+  			<!-- 9th ROW -->
+    		<tr>
+  				<td>CRM?</td>
+				<td>
+					<!-- <input type="number" id='myNumber'> -->
+					<select id = "CRM">
+						<option value = "Salesforce">Salesforce</option>
+						<option value = "Dynamics">Dynamics</option>
+						<option value = "C4C">SAP C4C</option>
+						<option value = "Other">Other</option>
+						<option value = "None">None</option>
+					</select>
+				</td>
+    			
+  			</tr>
+  			<!-- 10 ROW -->
     		<tr>
   				<td>SSO?</td>
 				<td>
@@ -119,7 +150,7 @@
 				</td>
     			
   			</tr>
-  			<!-- 8th ROW -->
+  			<!-- 11 ROW -->
     		<tr>
   				<td>MDM?</td>
 				<td>
@@ -131,35 +162,25 @@
 				</td>
     			
   			</tr>
-  			<!-- 9th ROW -->
+  			
+  			<!-- 12 ROW -->
     		<tr>
-  				<td>CRM?</td>
+  				<td>Is the customer interested in out of the box integrations (Sharepoint, Box Sync, Marketo, etc.)?</td>
 				<td>
-					<!-- <input type="number" id='myNumber'> -->
-					<select id = "CRM">
-						<option value = "Salesforce">Salesforce</option>
-						<option value = "Dynamics">Dynamics</option>
-						<option value = "C4C">SAP C4C</option>
-						<option value = "None">None</option>
-					</select>
-				</td>
-    			
-  			</tr>
-  			<!-- 10th ROW -->
-    		<tr>
-  				<td>Marketo, Outreach or Sharepoint?</td>
-				<td>
-					<!-- <input type="number" id='myNumber'> -->
+					<!-- <input type="number" id='myNumber'> 
 					<select id = "otherints">
 						<option value = "Marketo">Marketo</option>
 						<option value = "Outreach">Outreach</option>
 						<option value = "Sharepoint">Sharepoint</option>
 						<option value = "None">None</option>
-					</select>
+					</select> -->
+					<select id = "otherints">
+						<option value = "Yes">Yes</option>
+						<option value = "No">No</option>
 				</td>
     			
   			</tr>
-  			<!-- 11th ROW -->
+  			<!-- 13 ROW -->
     		<tr>
   				<td>Custom Integration or custom experience?</td>
 				<td>
@@ -182,15 +203,21 @@
  		
   <tr>
   		<td>
-  		<div class='button'>
-    		<button onclick="Calculation()">Calculate</button>
-  		</div>
+  			<div class='button'>
+    			<button onclick="Calculation()">Calculate</button>
+  			</div>
   		</td>
   		<td>
-  		<div class='answer'>
-  			<span id='display'></span>
-  		</div>
-  	</td>
+  			<div class='answer'>
+  				<span id='display'></span>
+  			</div> 
+  		</td>
+  		<td>
+  			<div class='pagesoutput'>
+  				<span id='page'></span>
+  			</div>
+  		</td>
+
 </tr>
   		</table>
 

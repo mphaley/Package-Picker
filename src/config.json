@@ -1,5 +1,13 @@
 {
     "version": 1,
     "labels": {},
-    "contents": {}
+    "contents": {
+
+    	"Essential Page": { "type": "page"},
+    	"Plus Page": { "type": "page"},
+    	"Ultimate Page": { "type": "page"},
+    	"Custom SOW Page": { "type": "page"}
+
+
+    }
 }
