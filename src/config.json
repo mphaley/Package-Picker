@@ -3,7 +3,7 @@
     "labels": {},
     "contents": {
 
-    	"Essential Page": { "type": "page"},
+    	"Essential": { 	"type": "page", "value" : ["154a5893e17a6de68f75f86f08a62b04"]},
     	"Plus Page": { "type": "page"},
     	"Ultimate Page": { "type": "page"},
     	"Custom SOW Page": { "type": "page"}

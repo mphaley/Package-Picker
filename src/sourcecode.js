@@ -19,17 +19,40 @@ window.onShowpadLibLoaded = function () {
   initApp();
 };
 
-function initApp() {
-	var xhr = new XMLHttpRequest();
-  xhr.addEventListener("load", function() {
-    if (xhr.readyState === xhr.DONE && xhr.status === 200) {
-      var config = JSON.parse(xhr.responseText);
-    }
-  });
-  xhr.open("GET", configUrl);
-  xhr.send();
+// function initApp() {
+// 	var xhr = new XMLHttpRequest();
+//   xhr.addEventListener("load", function() {
+//     if (xhr.readyState === xhr.DONE && xhr.status === 200) {
+//       var config = JSON.parse(xhr.responseText);
+// 	document.getElementById('page').innerHTML = config.contents.Essential.type;
 
+//     }
+//   });
+
+// xhr.open("GET", configUrl);
+// xhr.send();
+
+
+// }
+
+function initApp() {
+	var xmlhttp = new XMLHttpRequest();
+	var url = "config.json"
+	
+	xmlhttp.onreadystatechange = function() {
+		 if (this.readyState == 4 && this.status == 200) {
+		 	var myArr = JSON.parse(this.responseText);
+		 	 
+		 	 document.getElementById('page').innerHTML = myArr.assets[0].id;
+
+		 }
+	};
+
+	xmlhttp.open("GET", url, true);
+	xmlhttp.send();
 }
+
+
 
 function Calculation(){
 
@@ -193,7 +216,6 @@ if (customint == "Yes")
 // }
 
 document.getElementById('display').innerHTML = package_score;
-document.getElementById('page').innerHTML = package_score;
 
 
 }
