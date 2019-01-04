@@ -12,7 +12,7 @@ var CRM_WEIGHT = 7;
 var SSO_WEIGHT = 5;
 var MDM_WEIGHT = 5;
 var INTEGRATIONS_WEIGHT = 5;
-var CUSTOM_WEIGHT = 50;
+var CUSTOM_WEIGHT = 100;
 //////////////////////////////////////
 
 window.onShowpadLibLoaded = function () {
@@ -214,8 +214,23 @@ if (customint == "Yes")
 // else{
 // document.getElementById('display').innerHTML = "Essential";
 // }
+	
+	if (package_score < 40){
+		document.getElementById('display').innerHTML = "Essential";
+	}	
+	if (package_score >= 40 && package_score < 70) {
+		document.getElementById('display').innerHTML = "Plus";
+	}
+	if (package_score >= 70 && package_score < 100) {
+		document.getElementById('display').innerHTML = "Ultimate";
+	}
+	if (package_score >= 100) {
+		document.getElementById('display').innerHTML = "Custom SOW";
+		}
 
-document.getElementById('display').innerHTML = package_score;
+
+
+//document.getElementById('display').innerHTML = package_score;
 
 
 }
