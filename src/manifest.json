@@ -1,7 +1,7 @@
 {
     "identifier": "com.showpadmhtest.packagepicker",
     "name": "Package Picker",
-    "version": "1.0.9",
+    "version": "1.0.19",
     "description": "A PS package picker",
     "author": "Michael Haley"
 }

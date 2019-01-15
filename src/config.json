@@ -1,6 +1,13 @@
 {
     "version": 1,
-    "labels": {},
+    "labels": {
+    	"testweight": {
+    			"value": "76",
+    			"description": "A test weight"
+				}
+
+
+    	},
     "contents": {
 
     	"Essential": { 	"type": "page", "value" : ["154a5893e17a6de68f75f86f08a62b04"]},

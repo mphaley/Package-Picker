@@ -13,44 +13,67 @@ var SSO_WEIGHT = 5;
 var MDM_WEIGHT = 5;
 var INTEGRATIONS_WEIGHT = 5;
 var CUSTOM_WEIGHT = 100;
+var TEST_WEIGHT = 0;
+////////// DETAIL PAGES /////////
+var ESSENTIAL_PAGE = "";
+
+
 //////////////////////////////////////
 
 window.onShowpadLibLoaded = function () {
   initApp();
 };
 
+function initApp() {
+  var queryParams = readQueryParams(window.location.search);
+  var configUrl = decodeURIComponent(queryParams['configUrl']);
+
+  var xhr = new XMLHttpRequest();
+  xhr.addEventListener("load", function() {
+    if (xhr.readyState === xhr.DONE && xhr.status === 200) {
+      var config = JSON.parse(xhr.responseText);
+      //var titleEl = document.getElementById('title');
+     // titleEl.innerHTML = config.labels.homepage.title.value;
+
+    TEST_WEIGHT = config.labels.testweight.value;
+    ESSENTIAL_PAGE = config.contents.Essential.value[0];
+	document.getElementById('test').innerHTML = ESSENTIAL_PAGE;
+
+    }
+  });
+  xhr.open("GET", configUrl);
+  xhr.send();
+}
+
+function readQueryParams(params) {
+  return params.substr(1).split("&").reduce(function(acc, pair) {
+    if (!pair) {
+      return acc;
+    }
+    var parts = pair.split("=");
+    acc[parts[0]] = parts[1];
+    return acc;
+  }, {})
+}
+
 // function initApp() {
-// 	var xhr = new XMLHttpRequest();
-//   xhr.addEventListener("load", function() {
-//     if (xhr.readyState === xhr.DONE && xhr.status === 200) {
-//       var config = JSON.parse(xhr.responseText);
-// 	document.getElementById('page').innerHTML = config.contents.Essential.type;
+// 	var xmlhttp = new XMLHttpRequest();
+// 	var url = "config.json"
+	
+// 	xmlhttp.onreadystatechange = function() {
+// 		 if (this.readyState == 4 && this.status == 200) {
+// 		 	var myArr = JSON.parse(this.responseText);
+		 	 
+// 		 	 TEST_WEIGHT = myArr.labels.testweight.value;
+// 		 	 document.getElementById('test').innerHTML = TEST_WEIGHT;
 
-//     }
-//   });
+// 		 }
+// 	};
 
-// xhr.open("GET", configUrl);
-// xhr.send();
-
+// 	xmlhttp.open("GET", url, true);
+// 	xmlhttp.send();
 
 // }
-
-function initApp() {
-	var xmlhttp = new XMLHttpRequest();
-	var url = "config.json"
-	
-	xmlhttp.onreadystatechange = function() {
-		 if (this.readyState == 4 && this.status == 200) {
-		 	var myArr = JSON.parse(this.responseText);
-		 	 
-		 	 document.getElementById('page').innerHTML = myArr.assets[0].id;
-
-		 }
-	};
-
-	xmlhttp.open("GET", url, true);
-	xmlhttp.send();
-}
 
 
 
@@ -228,9 +251,17 @@ if (customint == "Yes")
 		document.getElementById('display').innerHTML = "Custom SOW";
 		}
 
-
+var finalpage = document.getElementById("thepage")
+finalpage.setAttribute('href', "showpad://file/1b7936c1cf3ed1952701821813bfcfed")
 
 //document.getElementById('display').innerHTML = package_score;
 
+
+}
+
+
+function pagesoutput() {
+
+window.open("showpad://file/1b7936c1cf3ed1952701821813bfcfed", "_blank");
 
 }
