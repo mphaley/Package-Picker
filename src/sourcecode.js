@@ -1,21 +1,28 @@
 
 ////////// PICKER WEIGHTINGS /////////
-var PLATFORM_WEIGHT = 10;
-var TEAMS_INVOLVED_WEIGHT = 5;
-var DEMOTRIAL_WEIGHT = 5;
-var REGULATED_WEIGHT = 4;
-var TIMELINE_WEIGHT = 6;
-var DIVISION_WEIGHT = 10;
-var PIECES_WEIGHT = 7;
-var LICENCES_WEIGHT = 7;
-var CRM_WEIGHT = 7;
-var SSO_WEIGHT = 5;
-var MDM_WEIGHT = 5;
-var INTEGRATIONS_WEIGHT = 5;
-var CUSTOM_WEIGHT = 100;
-var TEST_WEIGHT = 0;
+var PLATFORM_WEIGHT;
+var TEAMS_INVOLVED_WEIGHT;
+var DEMOTRIAL_WEIGHT;
+var REGULATED_WEIGHT;
+var TIMELINE_WEIGHT;
+var DIVISION_WEIGHT;
+var PIECES_WEIGHT;
+var LICENCES_WEIGHT;
+var CRM_WEIGHT;
+var SSO_WEIGHT;
+var MDM_WEIGHT;
+var INTEGRATIONS_WEIGHT;
+var CUSTOM_WEIGHT;
+var TEST_WEIGHT;
+////////// LIMITS /////////////
+var ESSENTIAL_LIMIT;
+var PLUS_LIMIT;
+var ULTIMATE_LIMIT;
 ////////// DETAIL PAGES /////////
 var ESSENTIAL_PAGE = "";
+var PLUS_PAGE = "";
+var ULTIMATE_PAGE = "";
+var CUSTOM_SOW_WEIGHT = "";
 
 
 //////////////////////////////////////
@@ -35,9 +42,51 @@ function initApp() {
       //var titleEl = document.getElementById('title');
      // titleEl.innerHTML = config.labels.homepage.title.value;
 
-    TEST_WEIGHT = config.labels.testweight.value;
+
+	PLATFORM_WEIGHT = Number(config.labels.weights.platform_weight.value);
+
+	TEAMS_INVOLVED_WEIGHT = Number(config.labels.weights.Teams_Involved_Weight.value);
+
+	DEMOTRIAL_WEIGHT = Number(config.labels.weights.Trial_Weight.value);
+
+	REGULATED_WEIGHT = Number(config.labels.weights.Regulated_Weight.value);
+
+	TIMELINE_WEIGHT = Number(config.labels.weights.Timeline_Weight.value);
+
+	DIVISION_WEIGHT = Number(config.labels.weights.Division_Weight.value);
+
+	PIECES_WEIGHT = Number(config.labels.weights.Pieces_of_Content_Weight.value);
+
+	LICENCES_WEIGHT = Number(config.labels.weights.License_Count_Weight.value);
+
+	CRM_WEIGHT = Number(config.labels.weights.CRM_Weight.value);
+
+	SSO_WEIGHT = Number(config.labels.weights.SSO_Weight.value);
+
+	MDM_WEIGHT = Number(config.labels.weights.MDM_Weight.value);
+
+	INTEGRATIONS_WEIGHT = Number(config.labels.weights.Integrations_Weight.value);
+
+	CUSTOM_WEIGHT = Number(config.labels.weights.Custom_Stuff_Weight.value);
+
+	ESSENTIAL_LIMIT = Number(config.labels.limits.Essential_Limit.value);
+	PLUS_LIMIT = Number(config.labels.limits.Plus_Limit.value);
+	ULTIMATE_LIMIT = Number(config.labels.limits.Ultimate_Limit.value);
+
+
+
     ESSENTIAL_PAGE = config.contents.Essential.value[0];
-	document.getElementById('test').innerHTML = ESSENTIAL_PAGE;
+    PLUS_PAGE = config.contents.Plus.value[0];
+    ULTIMATE_PAGE = config.contents.Ultimate.value[0];
+    CUSTOM_SOW_PAGE = config.contents.CustomSOW.value[0];
+    
+   	ESSENTIAL_PAGE = config.assets[ESSENTIAL_PAGE].slug;
+    PLUS_PAGE = config.assets[PLUS_PAGE].slug;
+    ULTIMATE_PAGE = config.assets[ULTIMATE_PAGE].slug;
+    CUSTOM_SOW_PAGE = config.assets[CUSTOM_SOW_PAGE].slug;
+
+
+	//document.getElementById('test').innerHTML = ESSENTIAL_PAGE;
 
     }
   });
@@ -87,13 +136,13 @@ var plat = plat.value;
 
 switch (plat){
 	case "Content":
-		package_score += PLATFORM_WEIGHT;
+	//	package_score += PLATFORM_WEIGHT;
 	break;
 	case "Training & Coaching":
-		package_score += PLATFORM_WEIGHT;
+	//	package_score += PLATFORM_WEIGHT;
 	break;
 	case "Both":
-		package_score += 2*PLATFORM_WEIGHT;
+		package_score += PLATFORM_WEIGHT;
 	break;
 
 }
@@ -237,24 +286,39 @@ if (customint == "Yes")
 // else{
 // document.getElementById('display').innerHTML = "Essential";
 // }
-	
-	if (package_score < 40){
+	var pageurl = "";
+	if (package_score < ESSENTIAL_LIMIT){
+		// working line ->document.getElementById('display').innerHTML = "Essential";
 		document.getElementById('display').innerHTML = "Essential";
+		var finalpage = document.getElementById("thepage")
+		pageurl = "showpad://file/" + ESSENTIAL_PAGE;
+		finalpage.setAttribute('href', pageurl);
+
 	}	
-	if (package_score >= 40 && package_score < 70) {
+	if (package_score >= ESSENTIAL_LIMIT && package_score < PLUS_LIMIT) {
 		document.getElementById('display').innerHTML = "Plus";
+		var finalpage = document.getElementById("thepage")
+		 pageurl = "showpad://file/" + PLUS_PAGE;
+		 finalpage.setAttribute('href', pageurl);
 	}
-	if (package_score >= 70 && package_score < 100) {
+	if (package_score >= PLUS_LIMIT && package_score < ULTIMATE_LIMIT) {
 		document.getElementById('display').innerHTML = "Ultimate";
+		var finalpage = document.getElementById("thepage")
+		 pageurl = "showpad://file/" + ULTIMATE_PAGE;
+		 finalpage.setAttribute('href', pageurl);
 	}
-	if (package_score >= 100) {
+	if (package_score >= ULTIMATE_LIMIT) {
 		document.getElementById('display').innerHTML = "Custom SOW";
+		var finalpage = document.getElementById("thepage")
+		 pageurl = "showpad://file/" + CUSTOM_SOW_PAGE;
+		 finalpage.setAttribute('href', pageurl);
 		}
+ 
 
-var finalpage = document.getElementById("thepage")
-finalpage.setAttribute('href', "showpad://file/1b7936c1cf3ed1952701821813bfcfed")
+ //var finalpage = document.getElementById("thepage")
+ //finalpage.setAttribute('href', "showpad://file/1b7936c1cf3ed1952701821813bfcfed")
 
-//document.getElementById('display').innerHTML = package_score;
+	//document.getElementById('display').innerHTML = TEAMS_INVOLVED_WEIGHT;
 
 
 }

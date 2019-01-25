@@ -1,19 +1,45 @@
 {
     "version": 1,
     "labels": {
-    	"testweight": {
-    			"value": "76",
-    			"description": "A test weight"
-				}
+    	"weights": {
+    	
+    	"platform_weight": { "value": "10", "description": "What platform is the customer interested in?"},
+
+    	"Teams_Involved_Weight": { "value": "11", "description": "Number of customer's teams invloved in presales (Marketing, Sales Ops, etc.)?"},
+
+    	"Trial_Weight": { "value": "10", "description": "Was SE team involved in trial?"},
+    	"Regulated_Weight": { "value": "10", "description": "Is the customer in a regulated industry?"},
+    	"Timeline_Weight": { "value": "10", "description": "Does the customer want to deploy in less then 60 days?"},
+    	"Division_Weight": { "value": "10", "description": "How many regions will have unique libraries of Content?"},
+    	"Pieces_of_Content_Weight": { "value": "10", "description": "How many pieces of content will they be launching with?"},
+    	"License_Count_Weight": { "value": "10", "description": "Number of Licences?"},
+    	"CRM_Weight": { "value": "10", "description": "CRM?"},
+    	"SSO_Weight": { "value": "10", "description": "SSO?"},
+    	"MDM_Weight": { "value": "10", "description": "MDM?"},
+    	"Integrations_Weight": { "value": "10", "description": "Is the customer interested in out of the box integrations (Sharepoint, Box Sync, Marketo, etc.)?"},
+    	"Custom_Stuff_Weight": { "value": "1", "description": "Custom Integration or custom experience?"}
+    	},
+
+    	"limits": {
+    		"Essential_Limit": { "value": "10", "description": "Upper limit for ESSENTIAL outcome"},
+    		"Plus_Limit": { "value": "30", "description": "Upper limit for PLUS outcome"},
+    		"Ultimate_Limit": { "value": "50", "description": "Upper limit for ULTIMATE outcome. Note, CUSTOM SOW will be anything above this limit"}
+
+
+
+
+    	}
+
+
 
 
     	},
     "contents": {
 
     	"Essential": { 	"type": "page", "value" : ["154a5893e17a6de68f75f86f08a62b04"]},
-    	"Plus Page": { "type": "page"},
-    	"Ultimate Page": { "type": "page"},
-    	"Custom SOW Page": { "type": "page"}
+    	"Plus": { "type": "page", "value" : ["154a5893e17a6de68f75f86f08a62b04"]},
+    	"Ultimate": { "type": "page", "value" : ["154a5893e17a6de68f75f86f08a62b04"]},
+    	"CustomSOW": { "type": "page", "value" : ["154a5893e17a6de68f75f86f08a62b04"]}
 
 
     }

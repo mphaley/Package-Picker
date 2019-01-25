@@ -3,7 +3,7 @@
     <head>
 		<link type="text/css" href="css/mobile.css">
 		<link rel="stylesheet" type="text/css" href="css/scss-picker.css">
-        <title>Package Picker</title>  
+        <title>Package Picker</title>
     </head>
     <body> 
  
@@ -20,7 +20,7 @@
     		
 <!-- 1 ROW -->
 			<tr>
-  				<td>What platform is the customer interested in?</td>
+  				<td>What platform is the customer interested in? <br/> <small>Content or T&C?</small></td>
 				<td>
 					<select id = "platform">
 						<option value = "Content">Content</option>
@@ -32,7 +32,7 @@
   			</tr> 
 <!-- 2 ROW -->
   			<tr>
-  				<td>Number of customer's teams invloved in presales (Marketing, Sales Ops, etc.)?</td>
+  				<td>Number of customer's teams invloved in presales?<br/> <small>(i.e. Marketing, Sales Ops, IT)</small></td>
 				<td>
 					<select id = "teamsinvolved">
 						<option value = "1">1</option>
@@ -56,7 +56,7 @@
 
   			<!-- 4 ROW -->
     		<tr>
-  				<td>Is the customer in a regulated industry?</td>
+  				<td>Is the customer in a regulated industry?<br/> <small>(i.e. Med Device, Pharma)</small></td>
 				<td>
 					<!-- <input type="number" id='myNumber'> -->
 					<select id = "regulated">
@@ -83,7 +83,7 @@
 
   			<!-- 6 ROW -->
     		<tr>
-  				<td>How many regions will have unique libraries of Content?</td>
+  				<td>How many regions will have unique libraries of Content?<br/> <small>(Number of possible divisions)</small></td>
 				<td>
 					<!-- <input type="number" id='myNumber'> -->
 					<select id = "regions">
@@ -125,7 +125,7 @@
 
   			<!-- 9th ROW -->
     		<tr>
-  				<td>CRM?</td>
+  				<td>Does the customer have a <b>CRM</b>?</td>
 				<td>
 					<!-- <input type="number" id='myNumber'> -->
 					<select id = "CRM">
@@ -140,7 +140,7 @@
   			</tr>
   			<!-- 10 ROW -->
     		<tr>
-  				<td>SSO?</td>
+  				<td>Does the customer have <b>SSO</b>?</td>
 				<td>
 					<!-- <input type="number" id='myNumber'> -->
 					<select id = "SSO">
@@ -152,7 +152,7 @@
   			</tr>
   			<!-- 11 ROW -->
     		<tr>
-  				<td>MDM?</td>
+  				<td>Does the customer have a <b>MDM</b> for their devices?</td>
 				<td>
 					<!-- <input type="number" id='myNumber'> -->
 					<select id = "MDM">
@@ -165,7 +165,7 @@
   			
   			<!-- 12 ROW -->
     		<tr>
-  				<td>Is the customer interested in out of the box integrations (Sharepoint, Box Sync, Marketo, etc.)?</td>
+  				<td>Is the customer interested in any <b>out of the box integrations</b>?<br/> <small>(i.e. Sharepoint, Box Sync, Marketo)</small></td>
 				<td>
 					<!-- <input type="number" id='myNumber'> 
 					<select id = "otherints">
@@ -182,7 +182,7 @@
   			</tr>
   			<!-- 13 ROW -->
     		<tr>
-  				<td>Custom Integration or custom experience?</td>
+  				<td>Is the customer interested in a <b>custom</b> integration or experience?</td>
 				<td>
 					<!-- <input type="number" id='myNumber'> -->
 					<select id = "custom">
@@ -212,15 +212,15 @@
   				<span id='display'></span>
   			</div> 
   		</td>
-  	 <td>
+  	 <!-- <td>
   			<div class='pagesoutput'>
   				<button onclick="pageoutput()">View Page</button>
   			</div>
 
-  		</td>
+  		</td> -->
   	<td>
-  			<!-- <span id='test'></span> -->
-  			<a id="thepage" href="http://www.google.com">HEY</a>
+  		<!--	<span id='test'></span>  -->
+  			<a id="thepage" href="">View Page</a> 
 
   	</td>
 
